@@ -28,6 +28,45 @@ body {
   @apply block text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors duration-200;
 }
 
+/* Range input styling */
+input[type="range"] {
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  appearance: none;
+  cursor: pointer;
+  accent-color: #4f46e5; /* indigo-600 */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: #4f46e5; /* indigo-600 */
+  border-radius: 9999px;
+}
+
+.dark input[type="range"] {
+  background-color: #374151; /* gray-700 */
+}
+
+.dark input[type="range"]::-webkit-slider-thumb {
+  background-color: #818cf8; /* indigo-400 */
+}
+
+/* Animation utilities */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+  }
+}
+
 /* Card styles */
 .card {
   @apply p-6 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:shadow-xl transition-colors duration-200;

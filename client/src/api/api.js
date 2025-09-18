@@ -47,6 +47,7 @@ export const feedbackAPI = {
   getAll: (filters = {}) => {
     const params = new URLSearchParams();
     if (filters.studentId) params.append('studentId', filters.studentId);
+    if (filters.projectId) params.append('projectId', filters.projectId);
     if (filters.projectTitle) params.append('projectTitle', filters.projectTitle);
     
     return api.get(`/feedback?${params.toString()}`);
@@ -54,6 +55,7 @@ export const feedbackAPI = {
   getById: (id) => api.get(`/feedback/${id}`),
   getMyFeedback: () => api.get('/feedback/me'),
   create: (feedbackData) => api.post('/feedback', feedbackData),
+  getByProject: (projectId) => api.get(`/feedback/project/${projectId}`),
 };
 
 export default api;
